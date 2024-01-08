@@ -15,4 +15,7 @@
 8. node_modules
 - nơi chứa tất cả thư viện của dự án.
 
-9. 
+9.
+# Chú thích: 
+- sau khi clone repo về thì gõ: `npm i` để cài các thư viện trong dự án của chúng ta.
+- start dự án: `npm run dev`
