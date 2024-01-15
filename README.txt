@@ -19,3 +19,14 @@
 # Chú thích: 
 - sau khi clone repo về thì gõ: `npm i` để cài các thư viện trong dự án của chúng ta.
 - start dự án: `npm run dev`
+
+10. State vs Props (2/3)
+- State: + Trạng thái của 1 component.
+         + Giá trị có thể xét lại, mỗi lần xét lại sẽ re-render. (Ở trong component)
+- Props: + Giá trị truyền từ component cha vào component con. Giao tiếp giữa hai component với nhau. Cha-Con.
+         + Giá trị không thể xét lại vì được truyền từ bên ngoài vào. (Ở trong component)
+=> Khi nào sử dụng state, props? 
+- Sử dụng state khi có sự tương tác của người dùng làm thay đổi giao diện.
+- Props khi chúng ta muốn truyền dữ liệu từ component cha -> con.
+
+11. Khi cập nhật lại state giống với giá trị trước đó thì component sẽ không re-render.
