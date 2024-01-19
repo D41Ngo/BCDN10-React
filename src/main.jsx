@@ -4,6 +4,9 @@ import ReactDOM from "react-dom/client";
 // ---
 // import default
 import App from "./App.jsx";
+// -- Config Redux --
+import { Provider } from "react-redux";
+import { rootStore } from "./redux/config.store.js";
 
 // ---
 // document.getElementById("root"): lấy một phần tử trên giao diện có id là root. Để show lên giao diện -> chèn các element vào trong thẻ có id là root
@@ -15,7 +18,9 @@ import App from "./App.jsx";
 // Tóm tắt: Đưa các component vào bên trong thẻ div#root
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <App />
+    <Provider store={rootStore}>
+      <App />
+    </Provider>
   </React.StrictMode>
 );
 

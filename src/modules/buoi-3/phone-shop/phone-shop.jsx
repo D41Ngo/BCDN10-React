@@ -47,6 +47,10 @@ const products = [
  * muốn set lại state ở component nào thì phải gọi method setState tại component đó.
  */
 
+// Component = UI + Logic.
+// 1. UI. (Component)
+// 2. Logic. (Redux)
+
 export default class PhoneShop extends Component {
   constructor() {
     super();

@@ -19,6 +19,9 @@ import Card from "./modules/buoi-3/props/card";
 import Button from "./modules/buoi-3/props/button";
 import BtProductList from "./modules/buoi-3/bt-product-list";
 import PhoneShop from "./modules/buoi-3/phone-shop/phone-shop";
+import DemoProps from "./modules/buoi-4/demo-props";
+import TangGiamFontSize from "./modules/buoi-4/font-size";
+import ReduxObject from "./modules/buoi-4/redux-object";
 // Function component
 /**
  * Lưu ý:
@@ -81,7 +84,10 @@ class House extends Component {
 function App() {
   return (
     <div className="app" style={{ display: "flex", gap: 10 }}>
-      <PhoneShop />
+      <ReduxObject />
+      {/* <TangGiamFontSize /> */}
+      {/* <DemoProps /> */}
+      {/* <PhoneShop /> */}
       {/* <BtProductList /> */}
       {/* <House mai="green" body="yellow" />
       <House mai="pink" body="orange" />
