@@ -29,7 +29,7 @@ const rootReducer = combineReducers({
   // Hàm xử lý khi muốn cập nhật lại state count
   // Tạo state count: 10
   countReducer: (state = { count: 23 }, action) => {
-    console.log("countReducer", action);
+    // console.log("countReducer", action);
 
     if (action.type === "tangCount") {
       // cập nhật lại state mới
@@ -45,7 +45,7 @@ const rootReducer = combineReducers({
   },
 
   tangGiamReducer: (state = { fz: 16 }, action) => {
-    console.log("tangGiamReducer", action);
+    // console.log("tangGiamReducer", action);
     // if (action.type === "tangFontSize") {
     //   return {
     //     fz: state.fz + 1,
@@ -75,7 +75,7 @@ const rootReducer = combineReducers({
     }
   },
   xemChiTietReducer: (state = { xemChiTiet: STATE_XCT }, action) => {
-    console.log("xemChiTietReducer", action);
+    // console.log("xemChiTietReducer", action);
     switch (action.type) {
       case "xemChiTiet": {
         state.xemChiTiet = action.payload;

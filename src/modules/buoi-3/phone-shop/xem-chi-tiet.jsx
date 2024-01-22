@@ -1,7 +1,23 @@
 import React, { Component } from "react";
 
 export default class XemChiTiet extends Component {
+  constructor() {
+    console.log("[XemChiTiet] constructor");
+    super();
+    this.state = {};
+  }
+
+  static getDerivedStateFromProps() {
+    console.log("[XemChiTiet] getDerivedStateFromProps");
+    return null;
+  }
+  componentDidMount() {
+    console.log("[XemChiTiet] componentDidMount");
+  }
+
   render() {
+    console.log("[XemChiTiet] render");
+
     const product = this.props.product;
     return (
       <div className="row">

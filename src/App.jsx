@@ -13,7 +13,7 @@ import FontSize from "./modules/buoi-2/state/font-size";
 import ChangeColor from "./modules/buoi-2/state/change-color";
 import RandomImage from "./modules/buoi-2/state/random-image";
 import Array from "./modules/buoi-2/array/array";
-import { Component } from "react";
+import { Component, useState } from "react";
 import Footer from "./modules/buoi-3/props/footer";
 import Card from "./modules/buoi-3/props/card";
 import Button from "./modules/buoi-3/props/button";
@@ -22,6 +22,8 @@ import PhoneShop from "./modules/buoi-3/phone-shop/phone-shop";
 import DemoProps from "./modules/buoi-4/demo-props";
 import TangGiamFontSize from "./modules/buoi-4/font-size";
 import ReduxObject from "./modules/buoi-4/redux-object";
+import LifeCycle from "./modules/buoi-5/life-cycle";
+import FontSizeFC from "./modules/buoi-5/function-component/font-size";
 // Function component
 /**
  * Lưu ý:
@@ -84,7 +86,8 @@ class House extends Component {
 function App() {
   return (
     <div className="app" style={{ display: "flex", gap: 10 }}>
-      <ReduxObject />
+      <FontSizeFC />
+      {/* <ReduxObject /> */}
       {/* <TangGiamFontSize /> */}
       {/* <DemoProps /> */}
       {/* <PhoneShop /> */}
@@ -183,3 +186,28 @@ function App() {
 }
 
 export default App;
+
+// a();
+
+function a() {
+  console.log("1. [a] begin");
+  b();
+  c();
+  console.log("2. [a] after");
+}
+
+function b() {
+  console.log("3. [b] begin");
+  c();
+  console.log("4. [b] after");
+}
+
+function c() {
+  console.log("5. [c] begin");
+  console.log("6. [c] after");
+}
+
+// 123456
+// 135642
+// 135642
+//

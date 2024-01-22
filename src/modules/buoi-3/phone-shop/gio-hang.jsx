@@ -8,7 +8,22 @@ import React, { PureComponent, Component } from "react";
  * - Tốn tài thêm tài nguyên của ứng dụng để lưu lại các giá trị của props.
  */
 export default class GioHang extends PureComponent {
+  constructor() {
+    console.log("[GioHang] constructor");
+    super();
+    this.state = {};
+  }
+
+  static getDerivedStateFromProps() {
+    console.log("[GioHang] getDerivedStateFromProps");
+    return null;
+  }
+  componentDidMount() {
+    console.log("[GioHang] componentDidMount");
+  }
+
   render() {
+    console.log("[GioHang] render");
     return (
       <table className="table table-striped">
         <thead>

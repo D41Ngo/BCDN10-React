@@ -53,6 +53,8 @@ const products = [
 
 export default class PhoneShop extends Component {
   constructor() {
+    console.log("[PhoneShop] constructor");
+
     super();
     this.state = {
       product: products[0],
@@ -193,7 +195,6 @@ export default class PhoneShop extends Component {
       });
     }
   };
-
   renderProducts = () => {
     return products.map((product) => {
       return (
@@ -207,7 +208,16 @@ export default class PhoneShop extends Component {
     });
   };
 
+  static getDerivedStateFromProps() {
+    console.log("[PhoneShop] getDerivedStateFromProps");
+    return null;
+  }
+  componentDidMount() {
+    console.log("%c[PhoneShop] componentDidMount", "color:green");
+  }
+
   render() {
+    console.log("[PhoneShop] render");
     return (
       <div className="container">
         {/* Sử dụng state để show Modal */}

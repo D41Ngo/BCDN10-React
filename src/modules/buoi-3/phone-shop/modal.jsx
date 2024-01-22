@@ -1,7 +1,23 @@
 import React, { Component } from "react";
 
 export default class Modal extends Component {
+  constructor() {
+    console.log("[Modal] constructor");
+    super();
+    this.state = {};
+  }
+
+  static getDerivedStateFromProps() {
+    console.log("[Modal] getDerivedStateFromProps");
+    return null;
+  }
+  componentDidMount() {
+    console.log("[Modal] componentDidMount");
+  }
+
   render() {
+    console.log("[Modal] render");
+
     const { title, content, open, onClose, onOK } = this.props;
 
     if (!open) return null;

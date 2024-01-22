@@ -2,8 +2,6 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 class TangGiamFontSize extends Component {
   render() {
-    // this.props.fontSize = 16
-    // this.props.tangFontSize
     return (
       <div>
         <p
