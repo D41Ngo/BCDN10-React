@@ -24,6 +24,10 @@ import TangGiamFontSize from "./modules/buoi-4/font-size";
 import ReduxObject from "./modules/buoi-4/redux-object";
 import LifeCycle from "./modules/buoi-5/life-cycle";
 import FontSizeFC from "./modules/buoi-5/function-component/font-size";
+import Lamp from "./modules/buoi-6/lamp";
+import Random from "./modules/buoi-6/random";
+import UseEffect from "./modules/buoi-6/use-effect";
+import TodoList from "./modules/buoi-6/todo-list";
 // Function component
 /**
  * Lưu ý:
@@ -86,7 +90,11 @@ class House extends Component {
 function App() {
   return (
     <div className="app" style={{ display: "flex", gap: 10 }}>
-      <FontSizeFC />
+      <TodoList />
+      {/* <UseEffect /> */}
+      {/* <Random /> */}
+      {/* <Lamp /> */}
+      {/* <FontSizeFC /> */}
       {/* <ReduxObject /> */}
       {/* <TangGiamFontSize /> */}
       {/* <DemoProps /> */}
