@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 /**
- * useEffect: là một hook can thiệp vào các giai đoạn vòng đời của component
+ * - useEffect: là một hook can thiệp vào các giai đoạn vòng đời của component
  * 1. mounting: (v)
  * 2. updating: (v)
  * 3. un-mounting: ( )
@@ -49,6 +49,11 @@ function UseEffect() {
   useEffect(() => {
     console.log("count:::", count);
   }, [count]);
+
+  useEffect(() => {
+    // clean up function
+    return () => {};
+  }, []);
 
   return (
     <div>

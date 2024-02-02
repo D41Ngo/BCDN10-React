@@ -28,6 +28,12 @@ import Lamp from "./modules/buoi-6/lamp";
 import Random from "./modules/buoi-6/random";
 import UseEffect from "./modules/buoi-6/use-effect";
 import TodoList from "./modules/buoi-6/todo-list";
+import CleanUp from "./modules/buoi-7/clean-up";
+import CleanUp2 from "./modules/buoi-7/clean-up_2";
+import DiaDiem from "./modules/buoi-7/dia-diem";
+import UseRef from "./modules/buoi-7/use-ref";
+import UseContext, { AudioProvider, C } from "./modules/buoi-7/use-context";
+import { Counter, useCounter } from "./modules/buoi-7/custom-hook";
 // Function component
 /**
  * Lưu ý:
@@ -88,9 +94,22 @@ class House extends Component {
 }
 
 function App() {
+  // const [show, setShow] = useState(true);
+  const [{ count }, { handleTang5 }] = useCounter();
+
   return (
     <div className="app" style={{ display: "flex", gap: 10 }}>
-      <TodoList />
+      <button onClick={handleTang5}>{count}</button>
+      {/* <Counter /> */}
+      {/* <AudioProvider>
+        <UseContext />
+      </AudioProvider>
+      <C /> */}
+
+      {/* <UseRef /> */}
+      {/* <DiaDiem /> */}
+      {/* <CleanUp2 /> */}
+      {/* <TodoList /> */}
       {/* <UseEffect /> */}
       {/* <Random /> */}
       {/* <Lamp /> */}

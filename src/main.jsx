@@ -17,11 +17,11 @@ import { rootStore } from "./redux/config.store.js";
 
 // Tóm tắt: Đưa các component vào bên trong thẻ div#root
 ReactDOM.createRoot(document.getElementById("root")).render(
-  // <React.StrictMode>
-  <Provider store={rootStore}>
-    <App />
-  </Provider>
-  // </React.StrictMode>
+  <React.StrictMode>
+    <Provider store={rootStore}>
+      <App />
+    </Provider>
+  </React.StrictMode>
 );
 
 // function createRoot(root) {

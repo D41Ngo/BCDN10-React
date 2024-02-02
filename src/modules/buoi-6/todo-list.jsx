@@ -85,6 +85,16 @@ function TodoList() {
   }, []);
 
   const opacity = status === "loading" ? 0.4 : 1;
+  // const [c, setC] = useState(0);
+
+  // if (3 > 5) {
+  //   const [c, setC] = useState(0);
+  // }
+
+  // == UI ==
+  if (todos.length === 0) {
+    return <>Loading...</>;
+  }
 
   return (
     <div>
