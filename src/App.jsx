@@ -34,6 +34,8 @@ import DiaDiem from "./modules/buoi-7/dia-diem";
 import UseRef from "./modules/buoi-7/use-ref";
 import UseContext, { AudioProvider, C } from "./modules/buoi-7/use-context";
 import { Counter, useCounter } from "./modules/buoi-7/custom-hook";
+import Input from "./modules/buoi-8/input";
+import AdminLaptop from "./modules/admin-laptop/admin-laptop";
 // Function component
 /**
  * Lưu ý:
@@ -95,11 +97,14 @@ class House extends Component {
 
 function App() {
   // const [show, setShow] = useState(true);
-  const [{ count }, { handleTang5 }] = useCounter();
+
+  return <AdminLaptop />;
 
   return (
     <div className="app" style={{ display: "flex", gap: 10 }}>
-      <button onClick={handleTang5}>{count}</button>
+      <AdminLaptop />
+      {/* <Input /> */}
+      {/* <button onClick={handleTang5}>{count}</button> */}
       {/* <Counter /> */}
       {/* <AudioProvider>
         <UseContext />
