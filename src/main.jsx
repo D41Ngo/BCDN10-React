@@ -8,6 +8,8 @@ import App from "./App.jsx";
 import { Provider } from "react-redux";
 import { rootStore } from "./redux/config.store.js";
 
+import { store } from "./redux/store.js";
+
 // ---
 // document.getElementById("root"): lấy một phần tử trên giao diện có id là root. Để show lên giao diện -> chèn các element vào trong thẻ có id là root
 // Thẻ div#root là nơi bắt đầu của 1 dự án react.
@@ -18,7 +20,7 @@ import { rootStore } from "./redux/config.store.js";
 // Tóm tắt: Đưa các component vào bên trong thẻ div#root
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <Provider store={rootStore}>
+    <Provider store={store}>
       <App />
     </Provider>
   </React.StrictMode>

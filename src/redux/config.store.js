@@ -74,24 +74,26 @@ const rootReducer = combineReducers({
       }
     }
   },
-  xemChiTietReducer: (state = { xemChiTiet: STATE_XCT }, action) => {
-    // console.log("xemChiTietReducer", action);
-    switch (action.type) {
-      case "xemChiTiet": {
-        state.xemChiTiet = action.payload;
-
-        // Nếu cùng giá trị thì sẽ không re-render lại
-        return { ...state }; // object
-        // return [...state] // array
-      }
-      default: {
-        return state;
-      }
-    }
-  },
+  xemChiTietReducer: xemChiTietReducer,
   // homeReducer.
   // gioHangReducer.
 });
+
+function xemChiTietReducer(state = { xemChiTiet: STATE_XCT }, action) {
+  // console.log("xemChiTietReducer", action);
+  switch (action.type) {
+    case "xemChiTiet": {
+      state.xemChiTiet = action.payload;
+
+      // Nếu cùng giá trị thì sẽ không re-render lại
+      return { ...state }; // object
+      // return [...state] // array
+    }
+    default: {
+      return state;
+    }
+  }
+}
 
 /**
  * Tạo store redux.
