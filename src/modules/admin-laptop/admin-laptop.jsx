@@ -1,13 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import FormDangKy from "./components/form-dang-ky/form-dang-ky";
 import TableProduct from "./components/table-product";
 
 function AdminLaptop() {
+  const [laptops, setLaptops] = useState([]);
+
+  const handleSubmit = (newLaptop) => {
+    setLaptops([newLaptop, ...laptops]);
+  };
+
   return (
     <div className="container mt-4">
-      <FormDangKy />
+      <FormDangKy handleSubmit={handleSubmit} />
 
-      <TableProduct />
+      <TableProduct data={laptops} />
     </div>
   );
 }
