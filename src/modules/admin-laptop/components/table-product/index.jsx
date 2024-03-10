@@ -14,6 +14,7 @@ function TableProduct(props) {
             <th scope="col">Screen Size</th>
             <th scope="col">Operating System</th>
             <th scope="col">Graphics Card</th>
+            <th scope="col">Images</th>
           </tr>
         </thead>
         <tbody>
@@ -29,6 +30,18 @@ function TableProduct(props) {
                 <th>{item.os}</th>
                 <th>{item.card}</th>
                 <th>{item.storage}</th>
+                <th>
+                  {item.images.map((i) => (
+                    <img
+                      style={{
+                        width: 200,
+                        height: 200,
+                      }}
+                      src={i.url}
+                      key={i.url}
+                    />
+                  ))}
+                </th>
               </tr>
             );
           })}

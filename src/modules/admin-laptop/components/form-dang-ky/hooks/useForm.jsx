@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Validator } from "../utils/validator";
 import { produce } from "immer";
 
 export const useForm = ({ handleSubmit }) => {
+  const uploadRef = useRef();
   const [values, setValues] = useState({
     name: "",
     brand: "",
@@ -164,7 +165,7 @@ export const useForm = ({ handleSubmit }) => {
     }
 
     // Dừng
-    handleSubmit(values);
+    handleSubmit({ ...values, images: uploadRef.current.getAllFile() });
 
     // reset form
     setValues({
@@ -181,7 +182,7 @@ export const useForm = ({ handleSubmit }) => {
 
   // [dữ liệu, hàm xử lý]
   return [
-    { touches, errors },
+    { touches, errors, uploadRef },
     { getFieldProps, onSubmit },
   ];
 };

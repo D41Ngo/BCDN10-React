@@ -1,18 +1,35 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, {
+  useEffect,
+  useRef,
+  useState,
+  useImperativeHandle,
+  forwardRef,
+} from "react";
 import CSS from "./upload.module.css";
 
-function Upload({ title = "Click to Upload" }) {
+function Upload({ title = "Click to Upload" }, ref) {
   // const title = props.title ? props.title : 'Click to Upload'
   // const { title = 'Click to Upload' } = props;
   const inpRef = useRef();
 
-  const [urlImages, setUrlImages] = useState([]);
+  const [files, setFiles] = useState([]);
 
   useEffect(() => {
     return () => {
-      urlImages.forEach((i) => URL.revokeObjectURL(i));
+      files.forEach((i) => URL.revokeObjectURL(i.url));
     };
-  }, [urlImages]);
+  }, [files]);
+
+  useImperativeHandle(
+    ref,
+    () => {
+      // Chỉnh sửa những thuộc tính hoặc method của ref.current
+      return {
+        getAllFile: () => files,
+      };
+    },
+    [files]
+  );
 
   return (
     <div>
@@ -28,12 +45,22 @@ function Upload({ title = "Click to Upload" }) {
 
         <input
           onChange={(event) => {
-            const newUrl = [];
+            const newFiles = [];
             for (const file of event.target.files) {
-              newUrl.push(URL.createObjectURL(file));
+              // Chuyển file về dạng blob
+              const content = new Blob([file]);
+              // --
+              const url = URL.createObjectURL(file);
+
+              const f = {
+                content,
+                url,
+              };
+
+              newFiles.push(f);
             }
 
-            setUrlImages(newUrl);
+            setFiles(newFiles);
           }}
           ref={inpRef}
           className="d-none"
@@ -43,15 +70,15 @@ function Upload({ title = "Click to Upload" }) {
       </div>
 
       <div>
-        {urlImages.map((i) => {
+        {files.map((i) => {
           return (
             <img
-              key={i}
+              key={i.url}
               style={{
                 width: 200,
                 objectFit: "cover",
               }}
-              src={i}
+              src={i.url}
               alt="..."
             />
           );
@@ -61,4 +88,5 @@ function Upload({ title = "Click to Upload" }) {
   );
 }
 
-export default Upload;
+// cho phép component bên ngoài truyền ref vào.
+export default forwardRef(Upload);

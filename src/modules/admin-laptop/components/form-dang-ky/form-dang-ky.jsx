@@ -13,7 +13,7 @@ import { useForm } from "./hooks/useForm";
 // Tách logic
 
 function FormDangKy(props) {
-  const [, { onSubmit, getFieldProps }] = useForm({
+  const [{ uploadRef }, { onSubmit, getFieldProps }] = useForm({
     handleSubmit: props.handleSubmit,
   });
 
@@ -92,7 +92,7 @@ function FormDangKy(props) {
       </form>
 
       <div className="col-4">
-        <Upload title="Upload" />
+        <Upload ref={uploadRef} title="Upload" />
       </div>
     </div>
   );
